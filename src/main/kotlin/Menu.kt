@@ -1,6 +1,6 @@
 abstract class Menu(
-    val title: String,
-    val createCmdName: String
+    private val title: String,
+    private val createCmdName: String
 ) {
     abstract val exit: () -> Unit
 
