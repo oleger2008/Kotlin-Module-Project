@@ -3,7 +3,7 @@ enum class State {
     NOTE_MENU
 }
 
-fun <T: Menu> runMenu(menu: T) {
+fun runMenu(menu: Menu) {
     menu.show()
     val cmdIdx = UserInputReader.readCmdIdx() ?: return
     menu.execute(cmdIdx)

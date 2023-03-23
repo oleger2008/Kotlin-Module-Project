@@ -1,6 +1,4 @@
-class Note(val name: String) {
-    var inner: String = String()
-
+class Note(val name: String, val inner: String) {
     fun show() {
         println(inner)
     }

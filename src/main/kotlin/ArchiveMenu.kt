@@ -19,7 +19,7 @@ class ArchiveMenu(
     }
 
     override fun executeImpl(index: Int) {
-        if (!InRange(index + 1, 1, Storage.size())) {
+        if ((index + 1) !in 1..Storage.size()) {
             printWrongCmdIdxMsg()
             return
         }

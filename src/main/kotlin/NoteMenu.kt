@@ -6,10 +6,9 @@ class NoteMenu(
     override fun create() {
         println("Введите имя новой заметки:")
         val name = UserInputReader.readLine()
-        currentArchive.addNote(Note(name))
         println("Введите содержимое заметки:")
         val inner = UserInputReader.readLine()
-        currentArchive.notes.last().inner = inner
+        currentArchive.addNote(Note(name, inner))
     }
 
     override fun showImpl() {
@@ -21,7 +20,7 @@ class NoteMenu(
     }
 
     override fun executeImpl(index: Int) {
-        if (!InRange(index + 1, 1, currentArchive.notes.size)) {
+        if ((index + 1) !in 1..currentArchive.notes.size) {
             printWrongCmdIdxMsg()
             return
         }
